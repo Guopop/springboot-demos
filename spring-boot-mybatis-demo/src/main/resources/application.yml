@@ -1,0 +1,14 @@
+server:
+  port: 8743
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://106.53.248.242:3306/mybatis_demo
+    username: root
+    password: 123456
+
+mybatis:
+  config-location: classpath:config/mybatis-config.xml
+  mapper-locations:
+    - classpath:mapper/*.xml

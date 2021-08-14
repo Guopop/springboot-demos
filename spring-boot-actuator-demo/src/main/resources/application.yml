@@ -1,0 +1,15 @@
+server:
+  port: 8743
+
+spring:
+  application:
+    name: actuator-demo
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  metrics:
+    tags:
+      application: ${spring.application.name}

@@ -1,0 +1,10 @@
+acme:
+  list:
+    - name: user
+      desc: is a user
+    - name: admin
+      desc: is a admin
+
+name:
+  firstname:
+  lastname: last

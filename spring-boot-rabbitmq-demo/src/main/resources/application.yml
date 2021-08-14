@@ -1,0 +1,17 @@
+spring:
+  rabbitmq:
+    host: 39.105.47.81
+    port: 5672
+    username: root
+    password: root
+    listener:
+#      type: simple
+      simple:
+        acknowledge-mode: manual
+#        concurrency: 2
+#        max-concurrency: 10
+#        retry:
+#          enabled: true
+#          max-attempts: 3
+#          initial-interval: 1000
+
