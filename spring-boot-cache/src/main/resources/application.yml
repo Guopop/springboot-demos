@@ -1,0 +1,17 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://39.105.47.81:3306/cache_demo?createDatabaseIfNotExist=true
+    username: root
+    password: 123456
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  redis:
+    host: 116.63.59.188
+    port: 6379
+    database: 0
+    username: admin
+    password: redis-admin
