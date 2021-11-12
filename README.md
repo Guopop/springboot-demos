@@ -1,2 +1,2 @@
-# springboot-demos
-springboot demos
+# java-demos
+java demos
