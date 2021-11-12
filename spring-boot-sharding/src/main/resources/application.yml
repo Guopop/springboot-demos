@@ -1,0 +1,61 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  # 分库分表配置
+  shardingsphere:
+    # 数据库配置
+    datasource:
+      names: ds0,ds1
+      ds0:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://39.105.47.81:3306/ds0
+        password: 123456
+        type: com.zaxxer.hikari.HikariDataSource
+        username: root
+      ds1:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://39.105.47.81:3306/ds1
+        password: 123456
+        type: com.zaxxer.hikari.HikariDataSource
+        username: root
+    # 分库分表规则配置
+    rules:
+      sharding:
+        # 表规则配置
+        tables:
+          user_order:
+            actual-data-nodes: ds$->{0..1}.user_order_$->{0..1}
+            # 分库规则配置
+            database-strategy:
+              standard:
+                sharding-algorithm-name: database-inline
+                sharding-column: user_id
+            # 分表规则配置
+            table-strategy:
+              standard:
+                sharding-algorithm-name: table-inline
+                sharding-column: id
+            # 主键规则配置
+            key-generate-strategy:
+              column: id
+              key-generator-name: snowflake
+        # 分库分表算法
+        shardingAlgorithms:
+          # 分库算法
+          database-inline:
+            type: INLINE
+            props:
+              algorithm-expression: ds$->{user_id % 2}
+          # 分表算法
+          table-inline:
+            type: INLINE
+            props:
+              algorithm-expression: user_order_$->{id % 2}
+        # 主键生成器
+        key-generators:
+          snowflake:
+            type: SNOWFLAKE
+            props:
+              worker-id: 123
