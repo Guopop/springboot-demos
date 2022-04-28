@@ -1,4 +1,4 @@
-package me.guopop.think.in.spring.ioc.overview.dependency.anno;
+package me.guopop.think.in.spring.ioc.overview.anno;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

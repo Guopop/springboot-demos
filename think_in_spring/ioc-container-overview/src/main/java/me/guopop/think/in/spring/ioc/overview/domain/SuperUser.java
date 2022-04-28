@@ -1,6 +1,6 @@
-package me.guopop.think.in.spring.ioc.overview.dependency.domain;
+package me.guopop.think.in.spring.ioc.overview.domain;
 
-import me.guopop.think.in.spring.ioc.overview.dependency.anno.Super;
+import me.guopop.think.in.spring.ioc.overview.anno.Super;
 
 /**
  * @author guopop

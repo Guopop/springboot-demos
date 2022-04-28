@@ -1,4 +1,4 @@
-package me.guopop.think.in.spring.ioc.overview.dependency.domain;
+package me.guopop.think.in.spring.ioc.overview.domain;
 
 /**
  * @author guopop
